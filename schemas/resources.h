@@ -1,6 +1,7 @@
 /*sheduler/shemas/resources - делаем
 							в качестве улучшения кода в программу добавлены сетторы;)*/
-#include <string>
+//#include <string>
+#include "identifiable.h"
 
 using namespace std;
 
@@ -10,28 +11,75 @@ public:
 	string Stohastic = "stohastic";
 };
 
-class Resource {
+class Resource : Identifiable {
 private:
 	string id;
 	string name;
 	int count;
 	string contractor_id;
 public:
-	void set_id(string value) {
-		id = value;
-	}
-	void set_name(string value) {
-		name = value;
-	}
-	void set_count(int value) {
-		count = value;
-	}
-	void set_contractor_id(string value) {
-		contractor_id = value;
-	}
-	string get_agent_id() {
-		return contractor_id;
-	}
+	void set_id(string value);
+	void set_name(string value);
+	void set_count(int value);
+	void set_contractor_id(string value);
+	string get_agent_id();
+	string get_name();
+	int get_count();
+	string get_id();
+};
+class Worker : public Resource
+{
+public:
+	string ignored_fields = "productivity";
+
+public:
+	Worker();
+	Worker* copy(Worker* prev);
+};
+class EmptySpaceConstructionObject {
+private:
+	string id;
+	string name;
+public:
+	EmptySpaceConstructionObject(void);
+};
+class Material : public Resource {
+private:
+	float cost_one_unit;
+public:
+	void set_cost_one_unit(float value);
+	float get_cost_one_unit(void);
+	Material* copy(Material* prev);
+	int with_count(int value);
+};
+
+/*void main(void)
+{
+	char ststic[] = { "static" };
+}*/
+/*
+#include "identifiable.h"
+
+using namespace std;
+
+class WorkerProductivityMode {
+public:
+	string Static = "static";
+	string Stohastic = "stohastic";
+};
+
+class Resource : Identifiable {
+private:
+	string id;
+	string name;
+	int count;
+	string contractor_id;
+public:
+	void set_id(string value);
+	void set_name(string value);
+	void set_count(int value);
+	void set_contractor_id(string value);
+	string get_agent_id();
 	string get_name() {
 		return name;
 	}
@@ -46,18 +94,14 @@ class Worker : public Resource
 {
 public:
 	string ignored_fields = "productivity";
-private:
-	float cost_one_unit;
+
 public:
-	Worker(){
-		set_id("");
-		set_name("");
-		set_contractor_id("");
-		
+	Worker() {
+
 	}
 	Worker* copy(Worker* prev)
 	{
-		Worker* newW = new Worker;
+		Worker* newW;
 
 		newW->set_id(prev->get_id());
 		newW->set_name(prev->get_name());
@@ -102,8 +146,4 @@ public:
 		return get_count();
 	}
 };
-
-/*void main(void)
-{
-	char ststic[] = { "static" };
-}*/
+*/
