@@ -2,11 +2,11 @@
 //#include <string>
 #include "Time.h"
 
-using namespace std;
+//using namespace std;
 
 struct AgentId {
-	string ContractorName;
-	string WorkerName;
+	std::string ContractorName;
+	std::string WorkerName;
 };
 
 class EventType {
@@ -15,15 +15,9 @@ private:
 	int START = 0;
 	int END = 1;
 public:
-	int get_INITIAL() {
-		return INITIAL;
-	}
-	int get_START() {
-		return START;
-	}
-	int get_END() {
-		return END;
-	}
+	int get_INITIAL();
+	int get_START();
+	int get_END();
 };
 
 class ScheduleEvent : public EventType {
@@ -33,6 +27,6 @@ private:
 	//double Time;	//time : Time
 	Time time;
 	//swork: Optional['ScheduledWork']
-	string swork;
+	std::string swork;
 	int available_workers_count;
 };
