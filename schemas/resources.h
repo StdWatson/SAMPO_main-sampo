@@ -22,7 +22,7 @@ public:
 	void set_name(string value);
 	void set_count(int value);
 	void set_contractor_id(string value);
-	string get_agent_id();
+	string get_contractor_id();
 	string get_name();
 	int get_count();
 	string get_id();
@@ -34,8 +34,28 @@ public:
 
 public:
 	Worker();
-	Worker* copy(Worker* prev);
+	std::string get_id();
+	std::string get_name();
+	int get_count();
+	std::string get_contractor_id();
+	float get_cost_one_unit();
+	void set_id(std::string id);
+	void set_name(std::string name);
+	void set_count(int count);
+	void set_contractor_id(std::string contractor_id);
+	void set_cost_one_unit(float cost_one_unit);
+	Worker* copy_W(Worker* prev);
+	void copy();
+	int with_count(int count);
+	float get_cost();
+	AgentId* get_agent_id();
+	float get_productivity(std::string productivity_mode);
+	std::string _repr();
+	std::string _str();
 };
+
+class Equipment : Resource {};
+
 class EmptySpaceConstructionObject {
 private:
 	string id;
@@ -45,11 +65,22 @@ public:
 };
 class Material : public Resource {
 private:
+	std::string id;
+	std::string name;
+	int count;
 	float cost_one_unit;
 public:
-	void set_cost_one_unit(float value);
-	float get_cost_one_unit(void);
-	Material* copy(Material* prev);
+	Material();
+	std::string get_id();
+	std::string get_name();
+	int get_count();
+	float get_cost_one_unit();
+	void set_id(std::string id);
+	void set_name(std::string name);
+	void set_count(int count);
+	void set_cost_one_unit(float cost_one_unit);
+	Material* copy_M(Material* prev);
+	void copy();
 	int with_count(int value);
 };
 
