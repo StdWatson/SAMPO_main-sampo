@@ -1,12 +1,19 @@
 /*sheduler/shemas/types - набор нужных типов*/
 #include <string>
+//#include <tuple>
 
-using namespace std;
+//using namespace std;
 
-struct AgentId {
-	string ContractorName;
-	string WorkerName;
-};
+/*std::string ContractorName;
+std::string WorkerName;*/
+
+//std::tuple <std::string, std::string> AgentId(ContractorName, WorkerName);
+//AgentId = make_tuple(ContractorName, WorkerName);
+
+/*struct AgentId {
+	std::string ContractorName;
+	std::string WorkerName;
+};*/
 
 class EventType {
 private:

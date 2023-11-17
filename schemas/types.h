@@ -1,8 +1,13 @@
 /*sheduler/shemas/types - набор нужных типов*/
 //#include <string>
+//#include<tuple>
 #include "Time.h"
 
 //using namespace std;
+
+/*std::string ContractorName;
+std::string WorkerName;*/
+//std::tuple <std::string, std::string> AgentId(ContractorName, WorkerName);
 
 struct AgentId {
 	std::string ContractorName;
