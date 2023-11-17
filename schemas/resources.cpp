@@ -12,7 +12,7 @@ public:
 	std::string Stohastic = "stohastic";
 };
 
-class Resource {
+class Resource {				//надо сделать конструктор
 private:
 	std::string id;
 	std::string name;
@@ -118,7 +118,7 @@ public:
 	float get_cost() {
 		return (cost_one_unit * get_count());
 	}
-	AgentId *get_agent_id() {							//надо потом очистить память!!!
+	AgentId* get_agent_id() {							//надо потом очистить память!!!
 		AgentId* newagent = new AgentId;
 		newagent->ContractorName = contractor_id;
 		newagent->WorkerName = name;
@@ -196,7 +196,7 @@ public:
 	void set_cost_one_unit(float cost_one_unit) {
 		this->cost_one_unit = cost_one_unit;
 	}
-	Material* copy_M(Material* prev)
+	/*Material* copy_M(Material* prev)
 	{
 		Material* newW;
 
@@ -205,7 +205,7 @@ public:
 		newW->set_count(prev->get_count());
 
 		return newW;
-	}
+	}*/
 	void copy() {
 		this->id = get_id();
 		this->name = get_name();

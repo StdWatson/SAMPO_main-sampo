@@ -3,34 +3,34 @@
 //#include <string>
 #include "identifiable.h"
 
-using namespace std;
+//using namespace std;
 
 class WorkerProductivityMode {
 public:
-	string Static = "static";
-	string Stohastic = "stohastic";
+	std::string Static = "static";
+	std::string Stohastic = "stohastic";
 };
 
 class Resource : Identifiable {
 private:
-	string id;
-	string name;
+	std::string id;
+	std::string name;
 	int count;
-	string contractor_id;
+	std::string contractor_id;
 public:
-	void set_id(string value);
-	void set_name(string value);
+	void set_id(std::string value);
+	void set_name(std::string value);
 	void set_count(int value);
-	void set_contractor_id(string value);
-	string get_contractor_id();
-	string get_name();
+	void set_contractor_id(std::string value);
+	std::string get_contractor_id();
+	std::string get_name();
 	int get_count();
-	string get_id();
+	std::string get_id();
 };
 class Worker : public Resource
 {
 public:
-	string ignored_fields = "productivity";
+	std::string ignored_fields = "productivity";
 
 public:
 	Worker();
@@ -44,11 +44,11 @@ public:
 	void set_count(int count);
 	void set_contractor_id(std::string contractor_id);
 	void set_cost_one_unit(float cost_one_unit);
-	Worker* copy_W(Worker* prev);
+	//Worker* copy_W(Worker* prev);
 	void copy();
 	int with_count(int count);
 	float get_cost();
-	AgentId* get_agent_id();
+	//AgentId* get_agent_id();
 	float get_productivity(std::string productivity_mode);
 	std::string _repr();
 	std::string _str();
@@ -58,8 +58,8 @@ class Equipment : Resource {};
 
 class EmptySpaceConstructionObject {
 private:
-	string id;
-	string name;
+	std::string id;
+	std::string name;
 public:
 	EmptySpaceConstructionObject(void);
 };
